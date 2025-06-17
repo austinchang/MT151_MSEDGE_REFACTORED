@@ -1,0 +1,118 @@
+{
+  "version": "2.0.0",
+  "app_name": "MT151_MSEDGE",
+  "description": "MMT010自動化測試工具",
+  "browser": {
+    "default_browser": "msedge",
+    "headless": false,
+    "slow_mo": 500,
+    "timeout": 30000,
+    "viewport_width": 1920,
+    "viewport_height": 1080,
+    "user_data_dir": null,
+    "chrome_args": [
+      "--start-maximized",
+      "--disable-dev-shm-usage",
+      "--no-sandbox",
+      "--disable-features=VizDisplayCompositor"
+    ]
+  },
+  "data": {
+    "default_test_data": {
+      "料號": "C08GL0DIG017A",
+      "站位": "B/I",
+      "版本": "V3.3.5.9_1.16.0.1E3.12-1",
+      "描述": "EN0DIGOA1-0322-GL_HL-325L B/I",
+      "MFGID群組": "DEFAULT"
+    },
+    "validation_rules": {
+      "料號": {
+        "required": true,
+        "pattern": "^[A-Z0-9]{10,}$",
+        "description": "料號必須為10位以上的大寫字母和數字組合"
+      },
+      "站位": {
+        "required": true,
+        "allowed_values": ["B/I", "FT", "PT", "SHIP"],
+        "description": "站位必須為預定義值之一"
+      },
+      "版本": {
+        "required": true,
+        "pattern": "^V\\d+\\.\\d+\\.\\d+\\.\\d+_\\d+\\.\\d+\\.\\d+\\.\\d+E\\d+\\.\\d+.*$",
+        "description": "版本號必須符合指定格式"
+      },
+      "描述": {
+        "required": true,
+        "min_length": 5,
+        "description": "描述不能為空且至少5個字符"
+      },
+      "MFGID群組": {
+        "required": false,
+        "default": "DEFAULT",
+        "description": "MFGID群組可選，預設為DEFAULT"
+      }
+    },
+    "data_file_path": "config/test_data.json",
+    "backup_data_path": "config/backup",
+    "batch_size": 10,
+    "batch_delay": 1.0
+  },
+  "web": {
+    "base_url": "https://accmisportal.accton.com/ACCTON/MMT/MMT010/MMT010_Index",
+    "login_timeout": 120000,
+    "page_load_timeout": 60000,
+    "element_timeout": 10000,
+    "selectors": {
+      "search_button": "#fr_btn_search_MMT010_Index_FormLayout_search_CD",
+      "save_all_button": "#cus_btn_masterdetailsave_CD",
+      "grid_container": "[id$=\"Setting_GridViewPartial\"]",
+      "data_row": "tr.dxgvDataRow_DEVMVC",
+      "header_row": "tr.dxgvHeader_DEVMVC",
+      "add_button": "[id$=\"_DXCBtnNew\"]",
+      "delete_button": "[id$=\"_DXCBtnDelete\"]",
+      "edit_button": "[id$=\"_DXCBtnEdit\"]",
+      "password_input": "input[type='password']"
+    },
+    "column_mapping": {
+      "料號": 1,
+      "站位": 2,
+      "版本": 3,
+      "描述": 4,
+      "MFGID群組": 5
+    }
+  },
+  "ai": {
+    "default_model": "auto",
+    "provider": "auto",
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "timeout": 30,
+    "zen_server_enabled": true,
+    "zen_server_path": null,
+    "enable_data_analysis": true,
+    "enable_error_diagnosis": true,
+    "enable_chat_assistance": true,
+    "enable_test_generation": true,
+    "prompts": {
+      "data_analysis": "\n        請分析以下測試資料的合理性和完整性：\n        資料: {data}\n        \n        請檢查：\n        1. 格式是否正確\n        2. 內容是否合理\n        3. 是否有潛在問題\n        4. 改善建議\n        ",
+      "error_diagnosis": "\n        請分析以下錯誤並提供解決方案：\n        錯誤: {error}\n        上下文: {context}\n        \n        請提供：\n        1. 錯誤原因分析\n        2. 解決步驟\n        3. 預防措施\n        ",
+      "chat_system": "\n        你是MT151_MSEDGE專案的AI助手，專門協助用戶進行MMT010系統的自動化操作。\n        請用繁體中文回答，保持友善和專業的語調。\n        "
+    }
+  },
+  "logging": {
+    "log_level": "INFO",
+    "log_file": "logs/mt151_msedge.log",
+    "max_log_size": 10485760,
+    "backup_count": 5,
+    "log_format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "date_format": "%Y-%m-%d %H:%M:%S",
+    "console_output": true,
+    "console_level": "INFO"
+  },
+  "auto_save": true,
+  "confirm_destructive_actions": true,
+  "max_retry_attempts": 3,
+  "retry_delay": 2.0,
+  "debug_mode": false,
+  "verbose_logging": false
+}

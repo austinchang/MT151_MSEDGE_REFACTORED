@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "saved_at": "2025-01-17T00:00:00",
+    "total_records": 3,
+    "version": "2.0.0",
+    "description": "MT151_MSEDGE 預設測試資料"
+  },
+  "data": [
+    {
+      "料號": "C08GL0DIG017A",
+      "站位": "B/I",
+      "版本": "V3.3.5.9_1.16.0.1E3.12-1",
+      "描述": "EN0DIGOA1-0322-GL_HL-325L B/I",
+      "MFGID群組": "DEFAULT",
+      "created_at": "2025-01-17T00:00:00",
+      "updated_at": "2025-01-17T00:00:00",
+      "source": "default"
+    },
+    {
+      "料號": "C08GL0DIG018B",
+      "站位": "FT",
+      "版本": "V3.3.6.0_1.17.0.1E3.13-1",
+      "描述": "EN0DIGOA1-0322-GL_HL-325L FT",
+      "MFGID群組": "DEFAULT",
+      "created_at": "2025-01-17T00:00:00",
+      "updated_at": "2025-01-17T00:00:00",
+      "source": "default"
+    },
+    {
+      "料號": "C08GL0DIG019C",
+      "站位": "PT",
+      "版本": "V3.3.7.0_1.18.0.1E3.14-1",
+      "描述": "EN0DIGOA1-0322-GL_HL-325L PT",
+      "MFGID群組": "DEFAULT",
+      "created_at": "2025-01-17T00:00:00",
+      "updated_at": "2025-01-17T00:00:00",
+      "source": "default"
+    }
+  ]
+}
